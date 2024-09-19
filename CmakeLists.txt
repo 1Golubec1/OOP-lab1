@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(lab1)
+
+set(flag "FALSE")
+
+if(flag)
+    add_subdirectory(Prog)
+    add_subdirectory(Inits)
+    add_subdirectory(Student)
+    add_subdirectory(Convert)
+else()
+    add_subdirectory(Testing)
+    add_subdirectory(Student)
+    add_subdirectory(Convert)
+endif()
