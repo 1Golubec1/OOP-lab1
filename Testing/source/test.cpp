@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../../Student/header/struct_func.h"
-#include "../../Convert/header/funcs_convert.h"
+#include "struct_func.h"
+#include "funcs_convert.h"
 #include <format>
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
@@ -20,7 +20,7 @@ TEST_CASE("TEST_CONVERT_STRING"){
     student2 = {};
 
     SECTION("CHECK_INCORRET_INPUT"){
-        CHECK_THROWS(student2 = cnv::convert("student.name Ivan\nstudent.group=B23-513\nstudent.grade=3.8\n")); 
+        CHECK_THROWS(student2 = cnv::convert("student.nameIvan\nstudent.group=B23-513\nstudent.grade=3.8\n")); 
 
         CHECK_THROWS(student2 = cnv::convert("student.name Ivan\nstudent.group=B23-513\nstudent.grade=nume\n"));
 
@@ -41,6 +41,10 @@ TEST_CASE("TEST_CONVERT_STRING"){
         CHECK_THROWS(student2 = cnv::convert("student.name=Ivan\nstudent.group=B23-513\nstudent.grade=3.8\n info..."));
 
         CHECK_THROWS(student2 = cnv::convert("student.name=Ivan\nstudent.group=23513\nstudent.grade=3.8\n"));
+
+        CHECK_THROWS(student2 = cnv::convert("student.name=Ivan\nstudent.grup=B23-513\nstudent.grade=3.8\n"));
+
+        CHECK_THROWS(student2 = cnv::convert("student.name=Ivan\nstudent.group=B23-513\nstudent.grde=3.8\n"));
     }
 
 }

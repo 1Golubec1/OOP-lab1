@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_library(Convert STATIC source/funcs_convert.cpp)
 
-target_include_directories(Convert PUBLIC header/funcs_convert.h)
+target_include_directories(Convert PUBLIC header)
+
+target_link_libraries(Convert Student)

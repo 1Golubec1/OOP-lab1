@@ -1,5 +1,5 @@
 #include <iostream> 
-#include "../header/struct_func.h"
+#include "struct_func.h"
 
 Student stude::init_student(const std::string name,const std::string number, float score){
     return (Student){name, number, score};
